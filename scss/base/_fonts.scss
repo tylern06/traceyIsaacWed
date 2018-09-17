@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans:300,300i,400,400i,500,500i,700,700i,800');
+@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,500,700,800');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700');
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600,700');
+
+@font-face {
+  font-family: 'MatrixBoldSmallCaps';
+  src: url('../fonts/MatrixBoldSmallCaps.otf');
+}
+
+@font-face {
+  font-family: 'TTRoundsCondensedRegular';
+  src: url('../fonts/TT-Rounds-Condensed-Regular.otf');
+}
+
+@font-face {
+  font-family: 'TTRoundsCondensedThin';
+  src: url('../fonts/TT-Rounds-Condensed-Thin.otf');
+}
+@font-face {
+  font-family: 'TTRoundsCondensedLight';
+  src: url('../fonts/TT-Rounds-Condensed-Light.otf');
+}
+
+$font-libre-baskerville: 'Libre Baskerville', serif;
+$font-matrix-bold-small-caps: 'MatrixBoldSmallCaps', sans-serif;
+$font-tt-rounds-condensed-regular: 'TTRoundsCondensedRegular', sans-serif;
+$font-tt-rounds-condensed-light: 'TTRoundsCondensedLight', sans-serif;
+$font-tt-rounds-condensed-thin: 'TTRoundsCondensedThin', sans-serif;
+$font-alegreya: 'Alegreya Sans', sans-serif;
+$font-alegreya-sc: 'Alegreya Sans SC', sans-serif;
+$font-poppins: 'Poppins', sans-serif;
+$font-raleway: 'Raleway', sans-serif;
+$font-works-san: 'Work Sans', sans-serif;
+$font-light: 300;
+$font-light-italic: 300i;
+$font-regular: 400;
+$font-regular-italic: 400i;
+$font-medium: 500;
+$font-medium-italic: 500i;
+$font-bold: 700;

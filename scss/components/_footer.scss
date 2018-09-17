@@ -1,0 +1,46 @@
+.footer {
+  width: 100%;
+  background: $dark-blue;
+  clear: both;
+  // margin-top: -3em;
+  min-height: 80px;
+  padding: 20px 0px;
+  text-transform: uppercase;
+  text-align: center;
+  p,h4,h5,h6,small {
+    color: $light-blue;
+    a {
+      color: $light-blue;
+    }
+    opacity: 0.8;
+    letter-spacing: 2px;
+    line-height: 1.2;
+  }
+
+  p,h5,small {
+    font-family: $font-poppins;
+  }
+  p {
+    font-size: 12px;
+  }
+
+ small {
+   padding-top: 20px;
+   text-transform: uppercase;
+  }
+  small, p {
+    display: block;
+    font-size: 10px;
+    line-height: 15px;
+    @include respondTo(phone) {
+      font-size: 8px;
+    };
+  }
+
+  a {
+    &:hover {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+}

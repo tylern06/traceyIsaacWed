@@ -1,0 +1,184 @@
+<script type="text/javascript">
+$(document).ready(function() {
+  $(window).scroll(function() {
+    if ($(this).scrollTop() >= 50) {
+      // If page is scrolled more than 50px
+      $("#return-to-top").fadeIn(200); // Fade in the arrow
+    } else {
+      $("#return-to-top").fadeOut(200); // Else fade out the arrow
+    }
+  });
+  $("#return-to-top").click(function() {
+    // When arrow is clicked
+    $("body,html").animate(
+      {
+        scrollTop: 0 // Scroll to top of body
+      },
+      500
+    );
+  });
+
+  $(".background-image-holder").each(function() {
+    var imgSrc = $(this).children("img").attr("src");
+    $(this).css("background", 'url("' + imgSrc + '")');
+    // $(this).children('img').hide();
+  });
+
+  // Fade in background images
+
+  setTimeout(function() {
+    $(".background-image-holder").each(function() {
+      $(this).addClass("fadeIn");
+    });
+    $(".header.fadeContent").each(function() {
+      $(this).addClass("fadeIn");
+    });
+  }, 200);
+  $(".image-slider").flexslider({
+    directionNav: false
+  });
+});
+</script>
+
+
+  <div class="main-container" ng-controller='countCtrl'>
+		<section class="header header-4 fullscreen">
+				<div class="image-slider">
+					<ul class="slides">
+						<li>
+							<div class="background-image-holder push-down">
+								<img alt="Background image" class="background-image" src="img/Optimized-3.jpg">
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+      <section class='countdown'>
+        <div class="container">
+          <div class="row hero-content">
+            <div class="col-sm-12 text-center">
+              <div class="clockdiv">
+                <div>
+                  <span class="days">{{days}}</span>
+                  <div class="smalltext">DAYS</div>
+                </div>
+                <div>
+                  <span class="hours">{{hours}}</span>
+                  <div class="smalltext">HRS</div>
+                </div>
+                <div>
+                  <span class="minutes">{{minutes}}</span>
+                  <div class="smalltext">MINS</div>
+                </div>
+                <div>
+                  <span class="seconds">{{seconds}}</span>
+                  <div class="smalltext">SECS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Venue -->
+      <section class="details details-5">
+        <div class="container">
+          <div class="row schedule">
+            <img id='top-leaf' src="img/TOP-LEFT-LEAF.png" alt="">
+            <div class="col-sm-12">
+              <div class="text-center">
+                <h2>Ceremony &amp; Reception</h2>
+                <p><b>Salty's on Alki Beach</b>
+                <br>Friday, August 4th 2017
+                <br>6:00PM-12:00AM<br>
+                <a href="https://www.google.com/maps/dir//1936+Harbor+Ave+SW,+Seattle,+WA+98126/@47.5865257,-122.4464596,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x5490406d03944fbb:0x1297bfe1e5f83ec7!2m2!1d-122.3764203!2d47.586547" target="_blank">1936 Harbor Ave SW<br>Seattle, WA 98126</a> <br></p>
+
+                <b>Attire</b><br> Summertime Fly<br>
+                <div class="info">
+                  <b>Men:</b> Chinos/slacks, collared shirt (no shorts or jeans or black suits)</br>
+                  <b>Ladies: </b> Dresses, skirts & blouse (no shorts or jeans or white dresses)
+                </div>
+              </div>
+            </div>
+            <img id='bottom-leaf' src="img/BOTTOM-RIGHT-LEAF.png" alt="">
+          </div>
+        </div>
+      </section>
+
+      <section class="story story-1 timeline">
+        <div class="container">
+          <h2 class='text-center sub-heading add-margin-top add-margin-bottom'>Timeline</h2>
+          <div class="timeline-container">
+
+            <div class="row top-row">
+              <div class="col-sm-6 col-xs-6 feature col-md-3">
+                <div class="timeline-wrapper">
+                  <h6>Guests Arrive</h6>
+                  <p>
+                    6:00pm
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-xs-6 feature col-md-3">
+                <div class="timeline-wrapper">
+                  <h6>Ceremony</h6>
+                  <p>
+                    6:30pm
+                  </p>
+                </div>
+              </div><div class="col-sm-6 col-xs-6 feature col-md-3">
+                <div class="timeline-wrapper">
+                  <h6>Cocktail Hour</h6>
+                  <p>6:45pm</p>
+                </div>
+              </div><div class="col-sm-6 col-xs-6 feature col-md-3">
+                <div class="timeline-wrapper">
+                  <h6>First Dance</h6>
+                  <p>
+                    7:45pm
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-sm-6 col-xs-6 feature col-md-3">
+                <div class="timeline-wrapper">
+                  <h6>Dinner</h6>
+                  <p>
+                    8:00pm
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-sm-6 col-xs-6 feature col-md-3">
+                <div class="timeline-wrapper">
+                  <h6>Cake</h6>
+                  <p>
+                    9:00pm
+                  </p>
+                </div>
+              </div><div class="col-sm-6 col-xs-6 feature col-md-3">
+                <div class="timeline-wrapper">
+                  <h6>Dancing</h6>
+                  <p>9:30pm</p>
+                </div>
+              </div><div class="col-sm-6 col-xs-6 feature col-md-3">
+                <div class="timeline-wrapper">
+                  <h6>Send Off</h6>
+                  <p>
+                    12:00am
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix">
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="return-to-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
+		</div>
