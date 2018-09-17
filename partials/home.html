@@ -19,7 +19,9 @@ $(document).ready(function() {
   });
 
   $(".background-image-holder").each(function() {
-    var imgSrc = $(this).children("img").attr("src");
+    var imgSrc = $(this)
+      .children("img")
+      .attr("src");
     $(this).css("background", 'url("' + imgSrc + '")');
     // $(this).children('img').hide();
   });
@@ -47,7 +49,7 @@ $(document).ready(function() {
 					<ul class="slides">
 						<li>
 							<div class="background-image-holder push-down">
-								<img alt="Background image" class="background-image" src="img/Optimized-3.jpg">
+								<img alt="Background image" class="background-image" src="img/hero.jpg">
 							</div>
 						</li>
 					</ul>
