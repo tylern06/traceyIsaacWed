@@ -1,5 +1,5 @@
 {
-  "name": "wyliedeanna2",
+  "name": "traceyIsaacWed",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -31,5 +31,9 @@
     "pump": "^1.0.2",
     "rev-del": "^1.0.5"
   },
-  "dependencies": {}
+  "dependencies": {
+    "express": "^4.16.3",
+    "nodemailer": "^4.6.8",
+    "nodemailer-ses-transport": "^1.5.1"
+  }
 }
