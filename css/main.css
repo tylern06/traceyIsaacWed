@@ -20,7 +20,7 @@
 */
 @media (max-width: 767px) {
   #mygallery {
-    max-width: 340px;
+    max-width: 300px;
     margin: 0 auto; } }
 
 .info {
