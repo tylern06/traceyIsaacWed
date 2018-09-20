@@ -16,7 +16,8 @@ app.use("/lightgallerycss", express.static(__dirname + "/node_modules/lightgalle
 app.use("/lightgalleryjs", express.static(__dirname + "/node_modules/lightgallery/dist/js")); // redirect lightgallery
 app.use("/lgthumbnailjs", express.static(__dirname + "/node_modules/lg-thumbnail/dist")); // redirect lightgallery
 app.use("/lgfullscreenjs", express.static(__dirname + "/node_modules/lg-fullscreen/dist")); // redirect lightgallery
-app.use("/papaparse", express.static(__dirname + "/node_modules/papaparse/dist")); // redirect lightgallery
+app.use("/papaparse", express.static(__dirname + "/node_modules/papaparse")); // redirect papaparses
+app.use("/lodash", express.static(__dirname + "/node_modules/lodash")); // redirect papaparses
 
 // Setting our Views Folder Directory for EJS
 // app.set('views', path.join(__dirname, './views'));

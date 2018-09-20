@@ -71,3 +71,55 @@ myAppModule.directive("lightgallery", function() {
     }
   };
 });
+
+myAppModule.directive("selectNgFiles", function() {
+  return {
+    require: "ngModel",
+    link: function postLink(scope, elem, attrs, ngModel) {
+      elem.on("change", function(e) {
+        var files = elem[0].files;
+        console.log("files in directive", files);
+        var config = {
+          delimiter: "", // auto-detect
+          newline: "", // auto-detect
+          quoteChar: '"',
+          escapeChar: '"',
+          header: false,
+          trimHeaders: false,
+          dynamicTyping: false,
+          preview: 0,
+          encoding: "",
+          worker: false,
+          comments: false,
+          step: undefined,
+          complete: onComplete,
+          error: undefined,
+          download: false,
+          skipEmptyLines: false,
+          chunk: undefined,
+          fastMode: undefined,
+          beforeFirstChunk: undefined,
+          withCredentials: undefined,
+          transform: undefined
+        };
+
+        if (files) {
+          _.forEach(files, function(file) {
+            var reader = new FileReader();
+            console.log("reader", reader);
+            reader.readAsText(file);
+            reader.onload = function(evt) {
+              var csvData = evt.target.result;
+              Papa.parse(csvData, config);
+            };
+          });
+        }
+
+        function onComplete(result) {
+          console.log("json rsvp", result);
+        }
+        ngModel.$setViewValue(files);
+      });
+    }
+  };
+});

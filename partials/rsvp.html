@@ -1,18 +1,16 @@
 <script type="text/javascript">
-  $(document).ready(function() {
-    $("input[type=radio]").on('click', function(){
-        $("input[type=radio]").each(function(){
-          var _this = $(this);
-          if((_this).is(':checked')) {
-            _this.parent().addClass('checked');
-          }else {
-            _this.parent().removeClass('checked');
-
-          }
-
-        })
+$(document).ready(function() {
+  $("input[type=radio]").on("click", function() {
+    $("input[type=radio]").each(function() {
+      var _this = $(this);
+      if (_this.is(":checked")) {
+        _this.parent().addClass("checked");
+      } else {
+        _this.parent().removeClass("checked");
+      }
     });
-  })
+  });
+});
 </script>
 
 <section class="rsvp rsvp-2 add-padding-top">
@@ -29,6 +27,7 @@
     <div class="row">
       <div class="text-center col-sm-12">
         <div class="form-wrapper" ng-controller="mainCtrl">
+            <input type="file" select-ng-files ng-model="fileArray">
           <form class="form-email" ng-submit="sendForm()">
             <div class="form-section">
               <div id='radio1' class="radio-group">
