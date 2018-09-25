@@ -14,8 +14,15 @@ myAppModule.controller("mainCtrl", function($scope, $rootScope, mainFactory, $lo
   };
 
   $scope.clickHome = function() {
-    console.log("home clicked");
+    // console.log("home clicked");
     $location.url("/");
+  };
+
+  $scope.addGuests = function(data) {
+    mainFactory.addGuests(data, function(res) {
+      console.log("this ", res);
+    });
+    return "yooo";
   };
 
   $scope.sendForm = function() {
@@ -114,11 +121,12 @@ myAppModule.directive("selectNgFiles", function() {
             };
           });
         }
-
+        //
         function onComplete(result) {
           console.log("json rsvp", result);
+          console.log("scope", scope.addGuests(result.data));
         }
-        ngModel.$setViewValue(files);
+        // ngModel.$setViewValue(files);
       });
     }
   };

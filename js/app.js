@@ -26,6 +26,9 @@ myAppModule.config(function($routeProvider, $locationProvider) {
     .when("/confirmed", {
       templateUrl: "partials/confirmed.html"
     })
+    .when("/manager", {
+      templateUrl: "partials/manager.html"
+    })
     .otherwise({
       redirectTo: "/"
     });

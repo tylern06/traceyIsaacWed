@@ -38,8 +38,10 @@
     "lg-thumbnail": "^1.1.0",
     "lightgallery": "^1.6.11",
     "lodash": "^4.17.11",
+    "mongoose": "^5.2.17",
     "nodemailer": "^4.6.8",
     "nodemailer-ses-transport": "^1.5.1",
-    "papaparse": "^4.6.0"
+    "papaparse": "^4.6.0",
+    "uuid": "^3.3.2"
   }
 }

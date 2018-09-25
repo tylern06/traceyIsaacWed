@@ -3,6 +3,7 @@ var app = express();
 var path = require("path");
 var bodyParser = require("body-parser");
 var fs = require("fs");
+var mongoose = require("mongoose");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -23,22 +24,22 @@ app.use("/lodash", express.static(__dirname + "/node_modules/lodash")); // redir
 // app.set('views', path.join(__dirname, './views'));
 // Setting our View Engine set to EJS
 // app.set('view engine', 'ejs');
+// Integrate body-parser with our App
+// Require path
+// this should match the name of the db you are going to use for your project.
 
+// Setting our Static Folder Directory
+
+// app.use(express.static(path.join(__dirname, "./client")));
+require("./server/config/mongoose.js");
+var routes_setter = require("./server/config/routes.js");
+routes_setter(app);
 // email: fernyhoughwedding@zoho.com
 var nodemailer = require("nodemailer");
 
 // create reusable transporter object using the default SMTP transport
 // var transporter = nodemailer.createTransport('smtps://pokemongomapper%40gmail.com:pikachu1@smtp.gmail.com');
 var ses = require("nodemailer-ses-transport");
-var transporter = nodemailer.createTransport({
-  host: "smtp.zoho.com",
-  port: 465,
-  secure: true, // use SSL
-  auth: {
-    user: "fernyhoughwedding@zoho.com",
-    pass: "wyli4792"
-  }
-});
 
 // app.get('/', function (req,res){
 //   console.log(req.body)
