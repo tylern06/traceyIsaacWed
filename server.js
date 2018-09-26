@@ -40,6 +40,12 @@ var nodemailer = require("nodemailer");
 // create reusable transporter object using the default SMTP transport
 // var transporter = nodemailer.createTransport('smtps://pokemongomapper%40gmail.com:pikachu1@smtp.gmail.com');
 var ses = require("nodemailer-ses-transport");
+var transporter = nodemailer.createTransport({
+  host: "smtp.zoho.com",
+  port: 465,
+  secure: true, // use SSL
+  auth: {}
+});
 
 // app.get('/', function (req,res){
 //   console.log(req.body)

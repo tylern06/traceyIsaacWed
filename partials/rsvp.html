@@ -17,56 +17,102 @@ $(document).ready(function() {
   <div class="container">
     <div class="row">
       <div class="col-sm-12 text-center">
-        <h1>Say you'll be there</h1>
+        <h1>RSVP</h1>
         <p>
-          Please let us know if you can make it by<br> May 1st at the latest!
+          Please let us know if you can make it by November 1st
         </p>
       </div>
     </div>
 
     <div class="row">
       <div class="text-center col-sm-12">
+        <hr id="rsvp-line">
         <div class="form-wrapper" ng-controller="mainCtrl">
-          <form class="form-email" ng-submit="sendForm()">
+          <form class="form-email" ng-submit="searchName()">
             <div class="form-section">
-              <div id='radio1' class="radio-group">
-                <div class="radio-holder btn checked">
-                  <input type="radio" name="rsvp" ng-model="form.rsvp"  ng-init="form.rsvp='attending'" value="attending"> <label for="rsvp"> Can't Wait</label><br>
-                </div>
-                <div class="radio-holder btn">
-                  <input type="radio" name="rsvp" ng-model="form.rsvp" value="not-attending"> <label for="rsvp">Can't Come</label>  <br>
-                </div>
-              </div>
+              <p>Enter the name on your invitation</p>
+              <input type="text" ng-model="searchform.name" placeholder="e.g. John Doe">
             </div>
-            <div class="form-section">
-              <p>Number of Guests:<br></p>
-              <select name="guests" ng-model="form.guests">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-              </select>
-            </div>
-            <div class="form-section">
-              <input type="text" ng-model="form.name" placeholder="Your Name / Names">
-            </div>
-            <div class="form-section">
-
-              <textarea ng-model="form.song" placeholder="You'll see me on the dance floor when they play..."></textarea>
-            </div>
-            <div class="form-section">
-              <textarea ng-model="form.allergies" placeholder="Food Allergies?"></textarea>
-            </div>
-            <input type="submit" value="RSVP">
+            <input type="submit" value='Find RSVP'>
           </form>
         </div>
-      </div>
+        <div class="noResults hideMe alert alert-danger">
+          Sorry, we couldn't find your name. Please try another search.
+       </div>
     </div>
   </div>
 </section>
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button> -->
+<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">RSVP</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal">Close</button>
+        <button type="button" class="btn">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1>RSVP</h1>
+      <p>
+        Please let us know if you can make it by November 1st
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="text-center col-sm-12">
+      <div class="form-wrapper" ng-controller="mainCtrl">
+        <form class="form-email" ng-submit="sendForm()">
+          <div class="form-section">
+            <div id='radio1' class="radio-group">
+              <div class="radio-holder btn checked">
+                <input type="radio" name="rsvp" ng-model="form.rsvp"  ng-init="form.rsvp='attending'" value="attending"> <label for="rsvp"> Can't Wait</label><br>
+              </div>
+              <div class="radio-holder btn">
+                <input type="radio" name="rsvp" ng-model="form.rsvp" value="not-attending"> <label for="rsvp">Can't Come</label>  <br>
+              </div>
+            </div>
+          </div>
+          <div class="form-section">
+            <p>Number of Guests:<br></p>
+            <select name="guests" ng-model="form.guests">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div class="form-section">
+            <input type="text" ng-model="form.name" placeholder="Your Name / Names">
+          </div>
+          <div class="form-section">
+
+            <textarea ng-model="form.song" placeholder="You'll see me on the dance floor when they play..."></textarea>
+          </div>
+          <div class="form-section">
+            <textarea ng-model="form.allergies" placeholder="Food Allergies?"></textarea>
+          </div>
+          <input type="submit" value="RSVP">
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->

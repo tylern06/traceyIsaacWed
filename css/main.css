@@ -528,13 +528,17 @@ div.background-image-holder.push-left {
     bottom: 11px; }
 
 .nav-1 {
-  height: 85px;
-  max-height: 85px;
+  height: 60px;
+  max-height: 60px;
   padding: 15px 30px;
   background: #fff;
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease; }
+  @media (min-width: 768px) and (max-width: 991px) {
+    .nav-1 {
+      height: 85px;
+      max-height: 85px; } }
   .nav-1 img {
     max-height: 20px;
     display: inline-block;
@@ -1652,3 +1656,29 @@ footer {
   .wedding-party .feature p {
     max-height: 328px;
     overflow: scroll; } }
+
+.rsvp {
+  /* firefox 19+ */
+  /* ie */ }
+  .rsvp #rsvp-line {
+    border-top: 2px solid #dad9d9;
+    width: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px; }
+  .rsvp ::-webkit-input-placeholder {
+    text-transform: lowercase; }
+  .rsvp ::-moz-placeholder {
+    text-transform: lowercase; }
+  .rsvp :-ms-input-placeholder {
+    text-transform: lowercase; }
+  .rsvp input:-moz-placeholder {
+    text-transform: lowercase; }
+  .rsvp .noResults {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 25px; }
+    .rsvp .noResults.hideMe {
+      display: none; }
+
+#searchModal .modal-title {
+  text-align: center; }

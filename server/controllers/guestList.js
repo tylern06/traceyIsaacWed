@@ -56,5 +56,25 @@ module.exports = {
       console.log("guestlist in destroy", guestlist);
       res.redirect("/");
     });
+  },
+  searchname: function(req, res) {
+    console.log("controller req name", req.body);
+    var name = req.body.name;
+    var errors = [];
+    var pattern = "" + name + "\\b";
+    var regex = new RegExp(pattern, "i");
+    GuestList.find({ party: { $in: [regex] } }, function(err, foundname) {
+      console.log("found name in controller*****", foundname);
+      if (err) {
+        console.log("err in search", err);
+        for (var x in err.errors) {
+          errors.push(x);
+        }
+        res.json({ status: false, errors: errors });
+        console.log("error searching", err);
+      } else {
+        res.json({ status: true, result: foundname });
+      }
+    });
   }
 };

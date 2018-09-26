@@ -1,0 +1,34 @@
+.rsvp {
+  #rsvp-line {
+    border-top: 2px solid #dad9d9;
+    width: 100px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  ::-webkit-input-placeholder {
+    text-transform: lowercase;
+  }
+  ::-moz-placeholder {
+    text-transform: lowercase;
+  } /* firefox 19+ */
+  :-ms-input-placeholder {
+    text-transform: lowercase;
+  } /* ie */
+  input:-moz-placeholder {
+    text-transform: lowercase;
+  }
+  .noResults {
+    max-width: 400px;
+    margin: 0 auto;
+    margin-top: 25px;
+    &.hideMe {
+      display: none;
+    }
+  }
+}
+
+#searchModal {
+  .modal-title {
+    text-align: center;
+  }
+}

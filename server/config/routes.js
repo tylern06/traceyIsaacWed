@@ -17,6 +17,10 @@ module.exports = function(app) {
     guestList.destroy(req, res);
   });
 
+  app.post("/searchname", function(req, res) {
+    guestList.searchname(req, res);
+  });
+
   // app.get('/display', function(req,res){
   // 	names.displayName(req,res);
   // })

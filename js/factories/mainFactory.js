@@ -29,5 +29,12 @@ myAppModule.factory("mainFactory", function($http) {
       callback(output);
     });
   };
+
+  factory.searchName = function(name, callback) {
+    name = JSON.stringify(name);
+    $http.post("/searchname", name).success(function(output) {
+      callback(output);
+    });
+  };
   return factory;
 });
