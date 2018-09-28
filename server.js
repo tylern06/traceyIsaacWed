@@ -102,7 +102,7 @@ app.post("/rsvp", function(req, res) {
     console.log("mail options");
     var mailOptions = {
       from: '"RSVP" <saurwedding@zoho.com>',
-      to: "tynguyen06@gmail.com", // list of receivers
+      to: "tynguyen06@gmail.com, tracen4@gmail.com", // list of receivers
       subject: "Tracey & Isaac Wedding RSVP", // Subject line
       text: "Hey Guys", // plaintext body
       html:
