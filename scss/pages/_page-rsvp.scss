@@ -37,6 +37,8 @@
     letter-spacing: 1px;
     border: 0;
     text-align: left;
+    max-width: 580px;
+    word-break: break-all;
     &:hover {
       background: none;
       color: #096d65;
@@ -61,7 +63,7 @@
     display: inline-block;
     margin-right: 10px;
     &.first {
-      margin-top: 40px;
+      margin-top: 30px;
     }
   }
   .form-section {
@@ -84,16 +86,22 @@
       padding-left: 15px;
     }
     span {
+      &.pickMeal,
+      &.text {
+        color: #096d65;
+        text-transform: uppercase;
+        font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+      }
       &.pickMeal {
         position: absolute;
-        top: 250px;
+        top: 240px;
         margin-left: 50px;
       }
-      color: #096d65;
-      text-transform: uppercase;
-      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 12px;
-      font-weight: 700;
+      &.glyphicon {
+        color: #096d65;
+      }
     }
   }
   form {
@@ -118,6 +126,10 @@
     text-align: center;
     font-size: 28px !important;
     // font-weight: 400;
+  }
+  .modal-content {
+    max-width: 600px;
+    margin: 0 auto;
   }
   .modal-body {
     h4 {

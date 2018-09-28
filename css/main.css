@@ -1689,6 +1689,8 @@ footer {
   letter-spacing: 1px;
   border: 0;
   text-align: left;
+  max-width: 580px;
+  word-break: break-all;
   height: 25px;
   line-height: 25px; }
   .partyList .btn:hover {
@@ -1708,7 +1710,7 @@ footer {
   display: inline-block;
   margin-right: 10px; }
   #rsvpModal .meals.first {
-    margin-top: 40px; }
+    margin-top: 30px; }
 
 #rsvpModal .form-section {
   margin-bottom: 20px; }
@@ -1725,16 +1727,20 @@ footer {
 #rsvpModal .meal .filter-option-inner {
   padding-left: 15px; }
 
-#rsvpModal .meal span {
+#rsvpModal .meal span.pickMeal, #rsvpModal .meal span.text {
   color: #096d65;
   text-transform: uppercase;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 700; }
-  #rsvpModal .meal span.pickMeal {
-    position: absolute;
-    top: 250px;
-    margin-left: 50px; }
+
+#rsvpModal .meal span.pickMeal {
+  position: absolute;
+  top: 240px;
+  margin-left: 50px; }
+
+#rsvpModal .meal span.glyphicon {
+  color: #096d65; }
 
 #rsvpModal form {
   position: static;
@@ -1753,6 +1759,10 @@ footer {
 #searchModal .modal-title {
   text-align: center;
   font-size: 28px !important; }
+
+#searchModal .modal-content {
+  max-width: 600px;
+  margin: 0 auto; }
 
 #searchModal .modal-body h4 {
   margin-bottom: 15px !important;

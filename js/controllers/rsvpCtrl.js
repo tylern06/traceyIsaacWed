@@ -43,7 +43,7 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
     if (name) {
       var name = name.split(" ");
       if (name.length > 1) {
-        return name[0] + " " + name[1].slice(0, 1) + ".";
+        return name[0].slice(0, 1) + "." + name[1].slice(0, 1) + ".";
       } else if (name.length > 0) {
         return name[0];
       } else {

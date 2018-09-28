@@ -40,6 +40,7 @@ $(document).ready(function() {
 
   $("#rsvpModal").on("shown.bs.modal", function() {
     $(".mealSelect").selectpicker();
+    $(".mealSelect").selectpicker("refresh");
   });
 });
 </script>
@@ -49,7 +50,7 @@ $(document).ready(function() {
     <div class="container">
       <div class="row">
         <div class=" text-center">
-          <h1>RSVP <span class='glyphicon glyphicon-menu-left'></span></h1>
+          <h1>RSVP</h1>
           <p>
             Please let us know if you can make it by November 1st
           </p>
@@ -135,19 +136,19 @@ $(document).ready(function() {
                     <p>Select entree of choice by initials<br></p>
                     <div class="meals first">
                       <span class='pickMeal'>Filet Mignon</span>
-                      <select class='mealSelect' name="guests" ng-model="form.filetMignon" multiple data-live-search="true">
+                      <select class='mealSelect' name="guests" ng-model="form.filetMignon" multiple data-live-search="true" title="Choose Entree">
                         <option value={{initials(name)}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
                       </select>
                     </div>
                     <div class="meals">
                       <span class='pickMeal'>King Salmon</span>
-                      <select class='mealSelect' name="guests" ng-model="form.kingSalmon" multiple data-live-search="true">
+                      <select class='mealSelect' name="guests" ng-model="form.kingSalmon" multiple data-live-search="true" title="Choose Entree">
                         <option value={{initials(name)}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
                       </select>
                     </div>
                     <div class="meals">
                       <span class='pickMeal'>Vegetarian</span>
-                      <select class='mealSelect' name="guests" ng-model="form.vegetarian" multiple data-live-search="true">
+                      <select class='mealSelect' name="guests" ng-model="form.vegetarian" multiple data-live-search="true" title="Choose Entree">
                         <option value={{initials(name)}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
                       </select>
                     </div>
