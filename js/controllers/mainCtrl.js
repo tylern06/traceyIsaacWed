@@ -27,17 +27,6 @@ myAppModule.controller("mainCtrl", function($scope, $rootScope, mainFactory, $lo
     return "yooo";
   };
 
-  $scope.sendForm = function() {
-    console.log("sent form", $scope.form);
-    if ($scope.form.guests == undefined) {
-      $scope.form.guests = 0;
-    }
-    mainFactory.sendForm($scope.form, function(data) {
-      console.log("received form", data);
-      $location.url("/confirmed");
-    });
-  };
-
   //add for html src
   // for (var i = 0; i < $scope.images.length; i++) {
   // 	$scope.images[i] = $sce.trustAsResourceUrl($scope.images[i]);

@@ -4,6 +4,7 @@ var path = require("path");
 var bodyParser = require("body-parser");
 var fs = require("fs");
 var mongoose = require("mongoose");
+var _ = require("lodash");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -44,7 +45,10 @@ var transporter = nodemailer.createTransport({
   host: "smtp.zoho.com",
   port: 465,
   secure: true, // use SSL
-  auth: {}
+  auth: {
+    user: "saurwedding@zoho.com",
+    pass: "Pumpkin1"
+  }
 });
 
 // app.get('/', function (req,res){
@@ -75,19 +79,35 @@ app.get("/images", function(req, res) {
 
 app.post("/rsvp", function(req, res) {
   console.log("rsvp submitted");
+  var food = "";
   console.log(req.body);
+  var guestnames = req.body.names.join(", ");
+
+  if (req.body.filetMignon) {
+    var names = req.body.filetMignon.join(", ");
+    food = "<h4>Filet Mignon:</h4> " + names + "\n<br>";
+  }
+
+  if (req.body.kingSalmon) {
+    var names = req.body.kingSalmon.join(", ");
+    food += "<h4>King Salmon:</h4> " + names + "\n <br>";
+  }
+  if (req.body.vegetarian) {
+    var names = req.body.vegetarian.join(", ");
+    food += "<h4>Vegetarian:</h4> " + names + "\n";
+  }
   var info = "";
   // setup e-mail data with unicode symbols
-  if (req.body.name.length > 2) {
+  if (req.body.names.length > 0) {
     console.log("mail options");
     var mailOptions = {
-      from: '"RSVP" <fernyhoughwedding@zoho.com>',
-      to: "deannamdurbin@gmail.com", // list of receivers
-      subject: "Deanna & Wylie Wedding RSVP", // Subject line
+      from: '"RSVP" <saurwedding@zoho.com>',
+      to: "tynguyen06@gmail.com", // list of receivers
+      subject: "Tracey & Isaac Wedding RSVP", // Subject line
       text: "Hey Guys", // plaintext body
       html:
-        "<table style='border: 1px solid black;border-collapse: collapse;width: 100%;'><tr><th style='border: 1px solid black;height: 50px;text-align: left;padding: 15px;'>Name</th><th style='border: 1px solid black;height: 50px;text-align: left;padding: 15px;'>RSVP</th><th style='border: 1px solid black;height: 50px;text-align: left;padding: 15px;'># of Guests</th><th style='border: 1px solid black;height: 50px;text-align: left;padding: 15px;'>Song Request</th><th style='border: 1px solid black;height: 50px;text-align: left;padding: 15px;'>Allergies</th></tr><tr><td style='border: 1px solid black;padding: 15px;text-align: left;'>" +
-        req.body.name +
+        "<table style='border: 1px solid black;border-collapse: collapse;width: 100%;'><tr><th style='border: 1px solid black;height: 50px;text-align: left;padding: 15px;'>Guest Names</th><th style='border: 1px solid black;height: 50px;text-align: left;padding: 15px;'>RSVP</th><th style='border: 1px solid black;height: 50px;text-align: left;padding: 15px;'># of Guests</th><th style='border: 1px solid black;height: 50px;text-align: left;padding: 15px;'>Song Request</th><th style='border: 1px solid black;height: 50px;text-align: left;padding: 15px;'>Food</th></tr><tr><td style='border: 1px solid black;padding: 15px;text-align: left;'>" +
+        guestnames +
         "</td><td style='border: 1px solid black;padding: 15px;text-align: left;'>" +
         req.body.rsvp +
         "</td><td style='border: 1px solid black;padding: 15px;text-align: left;'>" +
@@ -95,7 +115,7 @@ app.post("/rsvp", function(req, res) {
         "</td><td style='border: 1px solid black;padding: 15px;text-align: left;'>" +
         req.body.song +
         "</td><td style='border: 1px solid black;padding: 15px;text-align: left;'>" +
-        req.body.allergies +
+        food +
         "</td></tr></table>"
     };
     //send mail with defined transport object

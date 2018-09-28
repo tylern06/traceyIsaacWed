@@ -30,18 +30,6 @@ $(document).ready(function() {
   //     $(".modal:visible").each(reposition);
   //   });
   // });
-  $("#searchModal").on("shown.bs.modal", function() {
-    $(".partyName").click(function(event) {
-      var $this = $(event.target).addClass("active");
-      $this.siblings().removeClass("active");
-      // console.log("this id", $this);
-    });
-  });
-
-  $("#rsvpModal").on("shown.bs.modal", function() {
-    $(".mealSelect").selectpicker();
-    $(".mealSelect").selectpicker("refresh");
-  });
 });
 </script>
 
@@ -54,11 +42,6 @@ $(document).ready(function() {
           <p>
             Please let us know if you can make it by November 1st
           </p>
-          <!-- <ul ng-repeat='names in partyNames'>
-            <li>
-              {{joinNames(names.party)}}
-            </li>
-          </ul> -->
         </div>
       </div>
 
@@ -69,7 +52,7 @@ $(document).ready(function() {
             <form class="form-email" ng-submit="searchName()">
               <div class="form-section">
                 <p>Enter the name on your invitation</p>
-                <input type="text" ng-model="searchform.name" placeholder="e.g. John Doe">
+                <input type="text"  id="findName" ng-model="searchform.name" placeholder="e.g. John Doe">
               </div>
               <input type="submit" value='Find RSVP'>
             </form>
@@ -137,19 +120,19 @@ $(document).ready(function() {
                     <div class="meals first">
                       <span class='pickMeal'>Filet Mignon</span>
                       <select class='mealSelect' name="guests" ng-model="form.filetMignon" multiple data-live-search="true" title="Choose Entree">
-                        <option value={{initials(name)}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
+                        <option value={{name}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
                       </select>
                     </div>
                     <div class="meals">
                       <span class='pickMeal'>King Salmon</span>
                       <select class='mealSelect' name="guests" ng-model="form.kingSalmon" multiple data-live-search="true" title="Choose Entree">
-                        <option value={{initials(name)}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
+                        <option value={{name}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
                       </select>
                     </div>
                     <div class="meals">
                       <span class='pickMeal'>Vegetarian</span>
                       <select class='mealSelect' name="guests" ng-model="form.vegetarian" multiple data-live-search="true" title="Choose Entree">
-                        <option value={{initials(name)}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
+                        <option value={{name}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
                       </select>
                     </div>
                   </div>
@@ -168,5 +151,23 @@ $(document).ready(function() {
       </div>
     </div>
   </div>
+  <!-- end of rsvp modal -->
 
+  <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title text-center" id="myModalLabel">RSVP Confirmed</h4>
+        </div>
+        <div class="modal-body">
+          <p>We're excited to see you at our wedding!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of confirm modal -->
 </div>
