@@ -1704,6 +1704,12 @@ footer {
   text-align: center;
   font-size: 28px !important; }
 
+#rsvpModal .meals {
+  display: inline-block;
+  margin-right: 10px; }
+  #rsvpModal .meals.first {
+    margin-top: 40px; }
+
 #rsvpModal .form-section {
   margin-bottom: 20px; }
   #rsvpModal .form-section .btn.active {
@@ -1713,19 +1719,36 @@ footer {
 #rsvpModal .btn.dropdown-toggle {
   margin-bottom: 10px; }
   #rsvpModal .btn.dropdown-toggle:hover {
-    background: none; }
+    background: none;
+    color: #096d65; }
+
+#rsvpModal .meal .filter-option-inner {
+  padding-left: 15px; }
 
 #rsvpModal .meal span {
-  margin-left: 5px;
   color: #096d65;
   text-transform: uppercase;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 700; }
+  #rsvpModal .meal span.pickMeal {
+    position: absolute;
+    top: 250px;
+    margin-left: 50px; }
 
 #rsvpModal form {
   position: static;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%; }
+
+#rsvpModal textarea {
+  max-width: 500px;
   margin: 0 auto; }
+
+#rsvpModal .bootstrap-select {
+  width: 150px;
+  margin-left: 20px; }
 
 #searchModal .modal-title {
   text-align: center;

@@ -57,6 +57,13 @@
     text-align: center;
     font-size: 28px !important;
   }
+  .meals {
+    display: inline-block;
+    margin-right: 10px;
+    &.first {
+      margin-top: 40px;
+    }
+  }
   .form-section {
     .btn.active {
       background-color: #096d65;
@@ -68,12 +75,20 @@
   .btn.dropdown-toggle {
     &:hover {
       background: none;
+      color: #096d65;
     }
     margin-bottom: 10px;
   }
   .meal {
+    .filter-option-inner {
+      padding-left: 15px;
+    }
     span {
-      margin-left: 5px;
+      &.pickMeal {
+        position: absolute;
+        top: 250px;
+        margin-left: 50px;
+      }
       color: #096d65;
       text-transform: uppercase;
       font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -84,6 +99,18 @@
   form {
     position: static;
     margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+  }
+
+  textarea {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .bootstrap-select {
+    width: 150px;
+    margin-left: 20px;
   }
 }
 #searchModal {
