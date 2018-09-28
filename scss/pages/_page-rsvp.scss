@@ -27,8 +27,77 @@
   }
 }
 
+.partyList {
+  .btn {
+    display: block;
+    padding: 0;
+    color: #222;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 1px;
+    border: 0;
+    text-align: left;
+    &:hover {
+      background: none;
+      color: #096d65;
+    }
+    height: 25px;
+    line-height: 25px;
+  }
+  .btn.active {
+    // background-color: #096d65;
+    // color: white;
+    box-shadow: none;
+    text-decoration: underline;
+    color: #096d65;
+  }
+}
+#rsvpModal {
+  .modal-title {
+    text-align: center;
+    font-size: 28px !important;
+  }
+  .form-section {
+    .btn.active {
+      background-color: #096d65;
+      color: white;
+    }
+    margin-bottom: 20px;
+  }
+
+  .btn.dropdown-toggle {
+    &:hover {
+      background: none;
+    }
+    margin-bottom: 10px;
+  }
+  .meal {
+    span {
+      margin-left: 5px;
+      color: #096d65;
+      text-transform: uppercase;
+      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+    }
+  }
+  form {
+    position: static;
+    margin: 0 auto;
+  }
+}
 #searchModal {
   .modal-title {
     text-align: center;
+    font-size: 28px !important;
+    // font-weight: 400;
+  }
+  .modal-body {
+    h4 {
+      margin-bottom: 15px !important;
+      font-size: 18px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
   }
 }

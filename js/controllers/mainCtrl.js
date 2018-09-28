@@ -1,5 +1,6 @@
-myAppModule.controller("mainCtrl", function($scope, $rootScope, mainFactory, $location, $sce) {
+myAppModule.controller("mainCtrl", function($scope, $rootScope, mainFactory, $location, $sce, $timeout) {
   $scope.images = [];
+
   mainFactory.getImages(function(data) {
     // console.log("All images:", data);
     $scope.images = data;
@@ -18,6 +19,7 @@ myAppModule.controller("mainCtrl", function($scope, $rootScope, mainFactory, $lo
     $location.url("/");
   };
 
+  //add guest from csv
   $scope.addGuests = function(data) {
     mainFactory.addGuests(data, function(res) {
       console.log("this ", res);
@@ -33,23 +35,6 @@ myAppModule.controller("mainCtrl", function($scope, $rootScope, mainFactory, $lo
     mainFactory.sendForm($scope.form, function(data) {
       console.log("received form", data);
       $location.url("/confirmed");
-    });
-  };
-
-  $scope.searchName = function() {
-    console.log("search name is ", $scope.searchform);
-    mainFactory.searchName($scope.searchform, function(data) {
-      console.log("here are the search name", data);
-      if (data.status && data.result.length > 0) {
-        //name found
-        $("#searchModal").modal("show");
-        if (!$(".noResults").hasClass("hideMe")) {
-          $(".noResults").addClass("hideMe");
-        }
-      } else {
-        //no name found
-        $(".noResults").removeClass("hideMe");
-      }
     });
   };
 

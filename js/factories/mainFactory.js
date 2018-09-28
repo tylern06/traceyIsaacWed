@@ -11,6 +11,13 @@ myAppModule.factory("mainFactory", function($http) {
     });
   };
 
+  factory.sendForm = function(formData, callback) {
+    console.log("in sendform factory", formData);
+    $http.post("/rsvp", formData).success(function(output) {
+      callback(output);
+    });
+  };
+
   factory.addGuests = function(data, callback) {
     let obj = {
       names: data
@@ -23,18 +30,11 @@ myAppModule.factory("mainFactory", function($http) {
     });
   };
 
-  factory.sendForm = function(formData, callback) {
-    console.log("in sendform factory", formData);
-    $http.post("/rsvp", formData).success(function(output) {
-      callback(output);
-    });
-  };
-
-  factory.searchName = function(name, callback) {
-    name = JSON.stringify(name);
-    $http.post("/searchname", name).success(function(output) {
-      callback(output);
-    });
-  };
+  // factory.searchName = function(name, callback) {
+  //   name = JSON.stringify(name);
+  //   $http.post("/searchname", name).success(function(output) {
+  //     callback(output);
+  //   });
+  // };
   return factory;
 });

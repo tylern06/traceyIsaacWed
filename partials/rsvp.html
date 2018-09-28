@@ -1,118 +1,162 @@
 <script type="text/javascript">
 $(document).ready(function() {
-  $("input[type=radio]").on("click", function() {
-    $("input[type=radio]").each(function() {
-      var _this = $(this);
-      if (_this.is(":checked")) {
-        _this.parent().addClass("checked");
-      } else {
-        _this.parent().removeClass("checked");
-      }
+  // $("input[type=radio]").on("click", function() {
+  //   $("input[type=radio]").each(function() {
+  //     var _this = $(this);
+  //     if (_this.is(":checked")) {
+  //       _this.parent().addClass("checked");
+  //     } else {
+  //       _this.parent().removeClass("checked");
+  //     }
+  //   });
+  // });
+  // /**
+  //  * Vertically center Bootstrap 3 modals so they aren't always stuck at the top
+  //  */
+  // $(function() {
+  //   function reposition() {
+  //     var modal = $(this),
+  //       dialog = modal.find(".modal-dialog");
+  //     modal.css("display", "block");
+  //
+  //     // Dividing by two centers the modal exactly, but dividing by three
+  //     // or four works better for larger screens.
+  //     dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+  //   }
+  //   // Reposition when a modal is shown
+  //   $(".modal").on("show.bs.modal", reposition);
+  //   // Reposition when the window is resized
+  //   $(window).on("resize", function() {
+  //     $(".modal:visible").each(reposition);
+  //   });
+  // });
+  $("#searchModal").on("shown.bs.modal", function() {
+    $(".partyName").click(function(event) {
+      var $this = $(event.target).addClass("active");
+      $this.siblings().removeClass("active");
+      // console.log("this id", $this);
     });
+  });
+
+  $("#rsvpModal").on("shown.bs.modal", function() {
+    $(".mealSelect").selectpicker();
   });
 });
 </script>
 
-<section class="rsvp rsvp-2 add-padding-top">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12 text-center">
-        <h1>RSVP</h1>
-        <p>
-          Please let us know if you can make it by November 1st
-        </p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="text-center col-sm-12">
-        <hr id="rsvp-line">
-        <div class="form-wrapper" ng-controller="mainCtrl">
-          <form class="form-email" ng-submit="searchName()">
-            <div class="form-section">
-              <p>Enter the name on your invitation</p>
-              <input type="text" ng-model="searchform.name" placeholder="e.g. John Doe">
-            </div>
-            <input type="submit" value='Find RSVP'>
-          </form>
+<div ng-controller='rsvpCtrl'>
+  <section class="rsvp rsvp-2 add-padding-top">
+    <div class="container">
+      <div class="row">
+        <div class=" text-center">
+          <h1>RSVP <span class='glyphicon glyphicon-menu-left'></span></h1>
+          <p>
+            Please let us know if you can make it by November 1st
+          </p>
+          <!-- <ul ng-repeat='names in partyNames'>
+            <li>
+              {{joinNames(names.party)}}
+            </li>
+          </ul> -->
         </div>
-        <div class="noResults hideMe alert alert-danger">
-          Sorry, we couldn't find your name. Please try another search.
-       </div>
-    </div>
-  </div>
-</section>
-<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button> -->
-<div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">RSVP</h4>
       </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn" data-dismiss="modal">Close</button>
-        <button type="button" class="btn">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-sm-12 text-center">
-      <h1>RSVP</h1>
-      <p>
-        Please let us know if you can make it by November 1st
-      </p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="text-center col-sm-12">
-      <div class="form-wrapper" ng-controller="mainCtrl">
-        <form class="form-email" ng-submit="sendForm()">
-          <div class="form-section">
-            <div id='radio1' class="radio-group">
-              <div class="radio-holder btn checked">
-                <input type="radio" name="rsvp" ng-model="form.rsvp"  ng-init="form.rsvp='attending'" value="attending"> <label for="rsvp"> Can't Wait</label><br>
+      <div class="row">
+        <div class="text-center ">
+          <hr id="rsvp-line">
+          <div class="form-wrapper">
+            <form class="form-email" ng-submit="searchName()">
+              <div class="form-section">
+                <p>Enter the name on your invitation</p>
+                <input type="text" ng-model="searchform.name" placeholder="e.g. John Doe">
               </div>
-              <div class="radio-holder btn">
-                <input type="radio" name="rsvp" ng-model="form.rsvp" value="not-attending"> <label for="rsvp">Can't Come</label>  <br>
+              <input type="submit" value='Find RSVP'>
+            </form>
+          </div>
+          <div class="noResults hideMe alert alert-danger">
+            Sorry, we couldn't find your name. Please try another search.
+         </div>
+      </div>
+    </div>
+  </section>
+  <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button> -->
+  <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">RSVP</h4>
+        </div>
+        <div class="modal-body">
+          <h4>Please Select Your Party</h4>
+          <div class="partyList">
+            <p class="btn btn-secondary partyName" ng-repeat='names in partyNames' data-id={{names._id}} ng-click=selectName(names)>
+              {{joinNames(names.party)}}
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn" data-dismiss="modal">Close</button> -->
+          <button type="button" class="btn" ng-click=continueRSVP()>Continue</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="rsvpModal" tabindex="-1" role="dialog" aria-labelledby="rsvpModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">RSVP</h4>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="text-center ">
+              <div class="form-wrapper">
+                <form class="form-email" ng-submit="sendForm()">
+                  <div class="form-section">
+                    <div id='radio1' class="btn-group btn-group-toggle" data-toggle="buttons">
+                      <label class="btn btn-secondary active">
+                        <input type="radio" name="rsvp" id="option1" autocomplete="off" checked ng-model="form.rsvp"  ng-init="form.rsvp='attending'" value="attending"> Can't Wait
+                      </label>
+                      <label class="btn btn-secondary">
+                        <input type="radio" name="rsvp" id="option2" autocomplete="off" name="rsvp" ng-model="form.rsvp" value="not-attending"> Can't Come
+                      </label>
+                    </div>
+                  </div>
+                  <div class="form-section">
+                    <p>Number of Guests:<br></p>
+                    <select name="guests" ng-model="form.guests" >
+                      <option value={{incrementIndex($index)}} ng-repeat="num in selectedParty.party">{{incrementIndex($index)}}</option>
+                    </select>
+                  </div>
+                  <div class="form-section meal">
+                    <p>Select entree of choice by initials<br></p>
+                    <select class='mealSelect' name="guests" ng-model="form.filetMignon" multiple data-live-search="true">
+                      <option value={{initials(name)}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
+                    </select><span>Filet Mignon</span>
+                    <select class='mealSelect' name="guests" ng-model="form.filetMignon" multiple data-live-search="true">
+                      <option value={{initials(name)}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
+                    </select><span>Filet Mignon</span>
+                    <select class='mealSelect' name="guests" ng-model="form.filetMignon" multiple data-live-search="true">
+                      <option value={{initials(name)}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
+                    </select><span>Filet Mignon</span>
+                  </div>
+                  <div class="form-section">
+                    <textarea ng-model="form.song" placeholder="You'll see me on the dance floor when they play..."></textarea>
+                  </div>
+                  <input type="submit" class='btn' value="RSVP">
+                </form>
               </div>
             </div>
           </div>
-          <div class="form-section">
-            <p>Number of Guests:<br></p>
-            <select name="guests" ng-model="form.guests">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-          <div class="form-section">
-            <input type="text" ng-model="form.name" placeholder="Your Name / Names">
-          </div>
-          <div class="form-section">
-
-            <textarea ng-model="form.song" placeholder="You'll see me on the dance floor when they play..."></textarea>
-          </div>
-          <div class="form-section">
-            <textarea ng-model="form.allergies" placeholder="Food Allergies?"></textarea>
-          </div>
-          <input type="submit" value="RSVP">
-        </form>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn" ng-click=continueRSVP()>Continue</button>
+        </div> -->
       </div>
     </div>
   </div>
-</div> -->
+
+</div>
