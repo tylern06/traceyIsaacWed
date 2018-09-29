@@ -1,0 +1,16 @@
+.lodging-wrapper {
+  .address {
+    line-height: 1.2;
+  }
+  p:last-child {
+    max-width: 340px;
+  }
+  @include respondTo(phone) {
+    .address {
+      line-height: 1.4;
+    }
+    p:last-child {
+      margin-top: 10px;
+    }
+  }
+}

@@ -1657,6 +1657,18 @@ footer {
     max-height: 328px;
     overflow: scroll; } }
 
+.lodging-wrapper .address {
+  line-height: 1.2; }
+
+.lodging-wrapper p:last-child {
+  max-width: 340px; }
+
+@media (max-width: 767px) {
+  .lodging-wrapper .address {
+    line-height: 1.4; }
+  .lodging-wrapper p:last-child {
+    margin-top: 10px; } }
+
 .single-btn {
   background: #096d65 !important;
   color: white !important; }
