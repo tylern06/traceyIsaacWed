@@ -55,9 +55,10 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
     }
 
     $scope.form.rsvp = rsvp;
+    console.log("oringal party after4", $scope.originalParty);
     $scope.form.names = $scope.originalParty.party;
     $scope.form.guests = $scope.originalParty.guestCount;
-    // console.log("sent form", $scope.form);
+    console.log("sent form", $scope.form);
 
     rsvpFactory.sendForm($scope.form, function(data) {
       console.log("received form", data);
@@ -81,8 +82,8 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
       return name[name.length - 1] !== "*";
     });
     $scope.selectedParty.party = adults;
-    // console.log("$scope party", $scope.selectedParty);
-    // console.log("oringal party after1", $scope.originalParty);
+    console.log("$scope party", $scope.selectedParty);
+    console.log("oringal party after1", $scope.originalParty);
 
     if ($scope.selectedParty) {
       $("#searchModal").modal("hide");
@@ -94,8 +95,9 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
   //HELPERS
   $scope.selectName = function(party) {
     $scope.selectedParty = party;
-    //shallow clone obj
+    //shallow clone array
     $scope.originalParty = _.clone(party);
+    console.log("oringal party before", $scope.originalParty);
   };
 
   $scope.joinNames = function(names) {
