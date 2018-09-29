@@ -1657,6 +1657,13 @@ footer {
     max-height: 328px;
     overflow: scroll; } }
 
+.single-btn {
+  background: #096d65 !important;
+  color: white !important; }
+
+.modal-footer {
+  margin-top: 20px; }
+
 .rsvp {
   /* firefox 19+ */
   /* ie */ }
@@ -1680,24 +1687,29 @@ footer {
     .rsvp .noResults.hideMe {
       display: none; }
 
-.partyList .btn {
-  display: block;
+.partyList p {
   padding: 0;
   color: #222;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 1px;
   border: 0;
   text-align: left;
   max-width: 580px;
   word-break: break-all;
+  text-transform: uppercase;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   height: 25px;
   line-height: 25px; }
-  .partyList .btn:hover {
-    background: none;
-    color: #096d65; }
 
-.partyList .btn.active {
+.partyList p {
+  display: block; }
+  .partyList p:hover {
+    background: none;
+    color: #096d65;
+    cursor: pointer; }
+
+.partyList p.active {
   box-shadow: none;
   text-decoration: underline;
   color: #096d65; }

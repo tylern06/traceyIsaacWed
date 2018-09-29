@@ -12,7 +12,6 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
       console.log("here are the search name", data.result);
       if (data.status && data.result.length > 0) {
         $scope.partyNames = data.result;
-        console.log("party names", $scope.partyNames);
 
         //name found
         $("#searchModal").modal("show");
@@ -40,7 +39,7 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
     $(".mealSelect").on("changed.bs.select", function(e, clickedIndex, isSelected, previousValue) {
       console.log("name has been selected", clickedIndex);
       console.log("is selected", isSelected);
-      console.log("selected party", $scope.selectedParty.party[clickedIndex]);
+      // console.log("selected party", $scope.selectedParty.party[clickedIndex]);
     });
   });
 
@@ -55,7 +54,7 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
     }
 
     $scope.form.rsvp = rsvp;
-    console.log("oringal party after4", $scope.originalParty);
+    // console.log("oringal party after4", $scope.originalParty);
     $scope.form.names = $scope.originalParty.party;
     $scope.form.guests = $scope.originalParty.guestCount;
     console.log("sent form", $scope.form);
@@ -82,8 +81,8 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
       return name[name.length - 1] !== "*";
     });
     $scope.selectedParty.party = adults;
-    console.log("$scope party", $scope.selectedParty);
-    console.log("oringal party after1", $scope.originalParty);
+    // console.log("$scope party", $scope.selectedParty);
+    // console.log("oringal party after1", $scope.originalParty);
 
     if ($scope.selectedParty) {
       $("#searchModal").modal("hide");
@@ -97,7 +96,6 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
     $scope.selectedParty = party;
     //shallow clone array
     $scope.originalParty = _.clone(party);
-    console.log("oringal party before", $scope.originalParty);
   };
 
   $scope.joinNames = function(names) {
@@ -120,4 +118,25 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
   $scope.incrementIndex = function(index) {
     return (index = index + 1);
   };
+
+  // /**
+  //  * Vertically center Bootstrap 3 modals so they aren't always stuck at the top
+  //  */
+  // $(function() {
+  //   function reposition() {
+  //     var modal = $(this),
+  //       dialog = modal.find(".modal-dialog");
+  //     modal.css("display", "block");
+  //
+  //     // Dividing by two centers the modal exactly, but dividing by three
+  //     // or four works better for larger screens.
+  //     dialog.css("margin-top", Math.max(0, ($(window).height() - dialog.height()) / 2));
+  //   }
+  //   // Reposition when a modal is shown
+  //   $(".modal").on("show.bs.modal", reposition);
+  //   // Reposition when the window is resized
+  //   $(window).on("resize", function() {
+  //     $(".modal:visible").each(reposition);
+  //   });
+  // });
 });

@@ -1,3 +1,11 @@
+.single-btn {
+  background: #096d65 !important;
+  color: white !important;
+}
+
+.modal-footer {
+  margin-top: 20px;
+}
 .rsvp {
   #rsvp-line {
     border-top: 2px solid #dad9d9;
@@ -28,25 +36,30 @@
 }
 
 .partyList {
-  .btn {
-    display: block;
+  p {
     padding: 0;
     color: #222;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 1px;
     border: 0;
     text-align: left;
     max-width: 580px;
     word-break: break-all;
-    &:hover {
-      background: none;
-      color: #096d65;
-    }
+    text-transform: uppercase;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     height: 25px;
     line-height: 25px;
   }
-  .btn.active {
+  p {
+    display: block;
+    &:hover {
+      background: none;
+      color: #096d65;
+      cursor: pointer;
+    }
+  }
+  p.active {
     // background-color: #096d65;
     // color: white;
     box-shadow: none;
