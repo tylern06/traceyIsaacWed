@@ -85,19 +85,19 @@
                     <p>Select entree of choice by initials<br></p>
                     <div class="meals first">
                       <span class='pickMeal'>Filet Mignon</span>
-                      <select class='mealSelect' name="guests" ng-model="form.filetMignon" multiple data-live-search="true" title="Choose Entree">
+                      <select class='mealSelect' name="guests" ng-model="form.filetMignon" multiple title="Choose Entree">
                         <option value={{name}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
                       </select>
                     </div>
                     <div class="meals">
                       <span class='pickMeal'>King Salmon</span>
-                      <select class='mealSelect' name="guests" ng-model="form.kingSalmon" multiple data-live-search="true" title="Choose Entree">
+                      <select class='mealSelect' name="guests" ng-model="form.kingSalmon" multiple title="Choose Entree">
                         <option value={{name}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
                       </select>
                     </div>
                     <div class="meals">
                       <span class='pickMeal'>Vegetarian</span>
-                      <select class='mealSelect' name="guests" ng-model="form.vegetarian" multiple data-live-search="true" title="Choose Entree">
+                      <select class='mealSelect' name="guests" ng-model="form.vegetarian" multiple title="Choose Entree">
                         <option value={{name}} ng-repeat="name in selectedParty.party">{{initials(name)}}</option>
                       </select>
                     </div>
