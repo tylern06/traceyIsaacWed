@@ -2,6 +2,7 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
   // $scope.names = [];
   $scope.partyNames = [];
   $scope.selectedParty = "";
+  $scope.originalParty = "";
 
   //METHODS
   //search name from mongodb guestlists
@@ -49,12 +50,14 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
     }
 
     var rsvp = $("input[name='rsvp']:checked").val();
-    console.log("sent form", $scope.form);
     if ($scope.form.guests == undefined) {
       $scope.form.guests = 0;
     }
 
     $scope.form.rsvp = rsvp;
+    $scope.form.names = $scope.originalParty.party;
+    $scope.form.guests = $scope.originalParty.guestCount;
+    // console.log("sent form", $scope.form);
 
     rsvpFactory.sendForm($scope.form, function(data) {
       console.log("received form", data);
@@ -73,6 +76,14 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
 
   $scope.continueRSVP = function() {
     console.log("continue id", $scope.selectedParty);
+    let party = $scope.selectedParty.party;
+    let adults = _.filter(party, function(name) {
+      return name[name.length - 1] !== "*";
+    });
+    $scope.selectedParty.party = adults;
+    // console.log("$scope party", $scope.selectedParty);
+    // console.log("oringal party after1", $scope.originalParty);
+
     if ($scope.selectedParty) {
       $("#searchModal").modal("hide");
       $("#rsvpModal").modal("show");
@@ -83,6 +94,8 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
   //HELPERS
   $scope.selectName = function(party) {
     $scope.selectedParty = party;
+    //shallow clone obj
+    $scope.originalParty = _.clone(party);
   };
 
   $scope.joinNames = function(names) {

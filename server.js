@@ -80,6 +80,7 @@ app.get("/images", function(req, res) {
 app.post("/rsvp", function(req, res) {
   console.log("rsvp submitted");
   var food = "";
+  var song = "";
   console.log(req.body);
   var guestnames = req.body.names.join(", ");
 
@@ -95,6 +96,10 @@ app.post("/rsvp", function(req, res) {
   if (req.body.vegetarian) {
     var names = req.body.vegetarian.join(", ");
     food += "<h4>Vegetarian:</h4> " + names + "\n";
+  }
+
+  if (!req.body.song) {
+    song = "";
   }
   var info = "";
   // setup e-mail data with unicode symbols
@@ -113,7 +118,7 @@ app.post("/rsvp", function(req, res) {
         "</td><td style='border: 1px solid black;padding: 15px;text-align: left;'>" +
         req.body.guests +
         "</td><td style='border: 1px solid black;padding: 15px;text-align: left;'>" +
-        req.body.song +
+        song +
         "</td><td style='border: 1px solid black;padding: 15px;text-align: left;'>" +
         food +
         "</td></tr></table>"

@@ -112,7 +112,7 @@ $(document).ready(function() {
                   <div class="form-section">
                     <p>Number of Guests:<br></p>
                     <select name="guests" ng-model="form.guests" >
-                      <option value={{incrementIndex($index)}} ng-repeat="num in selectedParty.party">{{incrementIndex($index)}}</option>
+                      <option value={{incrementIndex($index)}} ng-repeat="num in originalParty.party">{{incrementIndex($index)}}</option>
                     </select>
                   </div>
                   <div class="form-section meal">
@@ -161,7 +161,7 @@ $(document).ready(function() {
           <h4 class="modal-title text-center" id="myModalLabel">RSVP Confirmed</h4>
         </div>
         <div class="modal-body">
-          <p>Thank you for your RSVP</p>
+          <p>Thank you for your RSVP.</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn" data-dismiss="modal">Close</button>

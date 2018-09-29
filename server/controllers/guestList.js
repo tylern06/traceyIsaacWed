@@ -12,19 +12,18 @@ module.exports = {
     });
   },
   create: function(req, res) {
-    // console.log("create req.body", req.body);
     // var names = JSON.parse(req.body.names);
     // console.log("names***", req.body.names);
     var names = req.body.names;
+    // console.log("create req.body", names);
     var errors = [];
     for (var i = 1; i < names.length; i++) {
-      // console.log("this name", names[i]);
+      console.log("this name", names[i]);
       let party = names[i];
-      var partyNames = party.slice(0, names[i].length - 2);
-      var count = party.slice(names[i].length - 2, names[i].length - 1);
-      count = parseInt(count[0]);
+      var partyNames = party[0];
+      var count = party[1];
       if (partyNames.length > 0) {
-        var partyNames = partyNames[0].split(",");
+        var partyNames = partyNames.split(",");
         var newNames = _.map(partyNames, function(name) {
           return name.trim();
         });
