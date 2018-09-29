@@ -48,10 +48,14 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
       $scope.form.names = $scope.selectedParty.party;
     }
 
+    var rsvp = $("input[name='rsvp']:checked").val();
     console.log("sent form", $scope.form);
     if ($scope.form.guests == undefined) {
       $scope.form.guests = 0;
     }
+
+    $scope.form.rsvp = rsvp;
+
     rsvpFactory.sendForm($scope.form, function(data) {
       console.log("received form", data);
       if (data.status) {
