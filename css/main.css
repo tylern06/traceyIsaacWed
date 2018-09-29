@@ -1669,6 +1669,18 @@ footer {
   .lodging-wrapper p:last-child {
     margin-top: 10px; } }
 
+.registry {
+  margin: 10px 0; }
+  .registry h5 {
+    color: #096d65;
+    margin-bottom: 10px; }
+  .registry p#first {
+    margin-bottom: 20px; }
+  .registry .registry-btn {
+    max-width: 200px;
+    padding: 0 10px;
+    margin: 20px auto; }
+
 .single-btn {
   background: #096d65 !important;
   color: white !important; }
