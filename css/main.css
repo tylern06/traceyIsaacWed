@@ -1657,11 +1657,20 @@ footer {
     max-height: 328px;
     overflow: scroll; } }
 
+.lodging-wrapper a:hover {
+  cursor: pointer; }
+
+.lodging-wrapper p.venue {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 15px;
+  text-align: center;
+  color: #096d65; }
+  .lodging-wrapper p.venue:hover {
+    cursor: pointer; }
+
 .lodging-wrapper .address {
   line-height: 1.2; }
-
-.lodging-wrapper p:last-child {
-  max-width: 340px; }
 
 @media (max-width: 767px) {
   .lodging-wrapper .address {
@@ -1745,11 +1754,12 @@ footer {
   text-align: center;
   font-size: 28px !important; }
 
-#rsvpModal .meals {
-  display: inline-block;
-  margin-right: 10px; }
-  #rsvpModal .meals.first {
-    margin-top: 30px; }
+@media (min-width: 571px) {
+  #rsvpModal .meals {
+    display: inline-block;
+    margin-right: 10px; }
+    #rsvpModal .meals.first {
+      margin-top: 30px; } }
 
 #rsvpModal .form-section {
   margin-bottom: 20px; }
@@ -1773,10 +1783,11 @@ footer {
   font-size: 12px;
   font-weight: 700; }
 
-#rsvpModal .meal span.pickMeal {
-  position: absolute;
-  top: 240px;
-  margin-left: 50px; }
+@media (min-width: 571px) {
+  #rsvpModal .meal span.pickMeal {
+    position: absolute;
+    top: 240px;
+    margin-left: 50px; } }
 
 #rsvpModal .meal span.glyphicon {
   color: #096d65; }
@@ -1787,13 +1798,19 @@ footer {
   max-width: 600px;
   width: 100%; }
 
+#rsvpModal .bootstrap-select {
+  width: 150px;
+  margin-left: 20px; }
+
 #rsvpModal textarea {
   max-width: 500px;
   margin: 0 auto; }
 
-#rsvpModal .bootstrap-select {
-  width: 150px;
-  margin-left: 20px; }
+@media (max-width: 570px) {
+  #rsvpModal span.pickMeal {
+    display: block; }
+  #rsvpModal textarea {
+    max-width: 300px; } }
 
 #searchModal .modal-title {
   text-align: center;

@@ -76,11 +76,13 @@
     text-align: center;
     font-size: 28px !important;
   }
-  .meals {
-    display: inline-block;
-    margin-right: 10px;
-    &.first {
-      margin-top: 30px;
+  @media (min-width: 571px) {
+    .meals {
+      display: inline-block;
+      margin-right: 10px;
+      &.first {
+        margin-top: 30px;
+      }
     }
   }
   .form-section {
@@ -111,10 +113,12 @@
         font-size: 12px;
         font-weight: 700;
       }
-      &.pickMeal {
-        position: absolute;
-        top: 240px;
-        margin-left: 50px;
+      @media (min-width: 571px) {
+        &.pickMeal {
+          position: absolute;
+          top: 240px;
+          margin-left: 50px;
+        }
       }
       &.glyphicon {
         color: #096d65;
@@ -128,14 +132,23 @@
     width: 100%;
   }
 
+  .bootstrap-select {
+    width: 150px;
+    margin-left: 20px;
+  }
+
   textarea {
     max-width: 500px;
     margin: 0 auto;
   }
 
-  .bootstrap-select {
-    width: 150px;
-    margin-left: 20px;
+  @media (max-width: 570px) {
+    span.pickMeal {
+      display: block;
+    }
+    textarea {
+      max-width: 300px;
+    }
   }
 }
 #searchModal {

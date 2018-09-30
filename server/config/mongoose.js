@@ -3,7 +3,11 @@ var fs = require("fs");
 var path = require("path");
 
 //connect to mongoose
-mongoose.connect("mongodb://localhost/traceyguestlist");
+mongoose.connect(
+  "mongodb://localhost/traceyguestlist",
+  { useNewUrlParser: true }
+);
+// mongoose.connect("mongodb://localhost/traceyguestlist", );
 var models_path = path.join(__dirname, "./../models");
 
 fs.readdirSync(models_path).forEach(function(file) {

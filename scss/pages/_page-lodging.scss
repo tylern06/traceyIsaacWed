@@ -1,9 +1,24 @@
 .lodging-wrapper {
+  a {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  p.venue {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: center;
+    color: #096d65;
+    &:hover {
+      cursor: pointer;
+    }
+  }
   .address {
     line-height: 1.2;
   }
   p:last-child {
-    max-width: 340px;
+    // max-width: 340px;
   }
   @include respondTo(phone) {
     .address {
