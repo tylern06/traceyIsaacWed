@@ -100,7 +100,10 @@ app.post("/rsvp", function(req, res) {
 
   if (!req.body.song) {
     song = "";
+  } else {
+    song = req.body.song;
   }
+
   var info = "";
   // setup e-mail data with unicode symbols
   if (req.body.names.length > 0) {
