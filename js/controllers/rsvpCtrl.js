@@ -68,6 +68,7 @@ myAppModule.controller("rsvpCtrl", function($scope, rsvpFactory) {
         $scope.selectedParty = "";
         $scope.partyNames = [];
         $("#findName").val("");
+        $("#song").val("");
       }
 
       // $location.url("/confirmed");
