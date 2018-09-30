@@ -1657,29 +1657,31 @@ footer {
     max-height: 328px;
     overflow: scroll; } }
 
-.lodging-wrapper a:hover {
-  cursor: pointer; }
-
-.lodging-wrapper p.venue {
-  font-weight: bold;
-  margin-top: 20px;
-  font-size: 15px;
-  text-align: center;
-  color: #096d65; }
-  .lodging-wrapper p.venue:hover {
+.lodging-wrapper {
+  text-align: center; }
+  .lodging-wrapper a:hover {
     cursor: pointer; }
-
-.lodging-wrapper .address {
-  line-height: 1.2; }
-
-@media (max-width: 767px) {
+  .lodging-wrapper p.venue {
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: center;
+    color: #096d65; }
+    .lodging-wrapper p.venue:hover {
+      cursor: pointer; }
   .lodging-wrapper .address {
-    line-height: 1.4; }
-  .lodging-wrapper p:last-child {
-    margin-top: 10px; } }
+    line-height: 1.2; }
+  @media (max-width: 767px) {
+    .lodging-wrapper .address {
+      line-height: 1.4; }
+    .lodging-wrapper p:last-child {
+      margin-top: 10px; } }
 
 .registry {
   margin: 10px 0; }
+  .registry a.btn {
+    background: #096d65;
+    opacity: 1; }
   .registry h5 {
     color: #096d65;
     margin-bottom: 10px; }
