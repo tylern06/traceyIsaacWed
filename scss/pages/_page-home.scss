@@ -850,7 +850,7 @@ nav.light.scrolled {
     color: $color_1;
   }
   img {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
 }
 .story-2 {
@@ -1545,7 +1545,7 @@ footer {
   // color: $color_1;
 }
 .wedding-party {
-  padding-top: 20px;
+  // padding-top: 20px;
   p {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -1556,6 +1556,9 @@ footer {
   img {
     max-width: 100% !important;
     height: auto;
+  }
+  .feature {
+    margin-bottom: 15px;
   }
 }
 .add-margin-top {
@@ -1949,7 +1952,7 @@ footer {
       margin: 0 auto;
       text-align: center;
     }
-    h6 {
+    h6.partyTitle {
       margin-top: 10px;
     }
   }
@@ -1958,6 +1961,7 @@ footer {
       display: block;
       margin: 0 auto;
     }
+    margin-bottom: 10px;
   }
   .accom-2 {
     text-align: center;

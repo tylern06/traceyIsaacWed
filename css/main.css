@@ -750,7 +750,7 @@ nav.light.scrolled .line-3 {
   color: #096d65; }
 
 .story-1 img {
-  margin-bottom: 20px; }
+  margin-bottom: 10px; }
 
 .story-2 img {
   max-width: 345px;
@@ -1319,16 +1319,19 @@ footer {
   #return-to-top:hover {
     background: rgba(197, 155, 117, 0.9); }
 
-.wedding-party {
-  padding-top: 20px; }
-  .wedding-party p {
-    padding-top: 10px;
-    padding-bottom: 10px; }
-  .wedding-party h6 {
-    text-align: center; }
-  .wedding-party img {
-    max-width: 100% !important;
-    height: auto; }
+.wedding-party p {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.wedding-party h6 {
+  text-align: center; }
+
+.wedding-party img {
+  max-width: 100% !important;
+  height: auto; }
+
+.wedding-party .feature {
+  margin-bottom: 15px; }
 
 .add-margin-top {
   margin-top: 20px; }
@@ -1588,11 +1591,13 @@ footer {
     max-width: 300px;
     margin: 0 auto;
     text-align: center; }
-  .wedding-party h6 {
+  .wedding-party h6.partyTitle {
     margin-top: 10px; }
-  .feature img {
-    display: block;
-    margin: 0 auto; }
+  .feature {
+    margin-bottom: 10px; }
+    .feature img {
+      display: block;
+      margin: 0 auto; }
   .accom-2 {
     text-align: center; }
     .accom-2 h6 {
