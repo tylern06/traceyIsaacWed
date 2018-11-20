@@ -1827,3 +1827,27 @@ footer {
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 400; }
+
+.events p {
+  line-height: 1.7; }
+
+.events hr {
+  border-top: 1px solid #096d65; }
+
+.events .events-wrapper h4 {
+  margin-bottom: 4px; }
+
+.events .events-wrapper h5 {
+  margin-bottom: 2px; }
+
+.events .events-wrapper p.address {
+  margin-bottom: 0px;
+  line-height: 1.7; }
+
+.events .events-wrapper p.text-center {
+  max-width: 600px;
+  margin: 0 auto;
+  margin-bottom: 10px; }
+
+.events .events-wrapper p.date {
+  margin-bottom: 10px; }

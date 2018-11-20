@@ -11,6 +11,9 @@ myAppModule.config(function($routeProvider, $locationProvider) {
     .when("/theparty", {
       templateUrl: "partials/theparty.html"
     })
+    .when("/events", {
+      templateUrl: "partials/events.html"
+    })
     .when("/lodging", {
       templateUrl: "partials/lodging.html"
     })
